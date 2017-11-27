@@ -6,13 +6,13 @@
 /*   By: mpauw <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/14 08:40:27 by mpauw             #+#    #+#             */
-/*   Updated: 2017/11/17 19:21:56 by mpauw            ###   ########.fr       */
+/*   Updated: 2017/11/20 14:00:55 by mpauw            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef GET_NEXT_LINE_H
 # define	GET_NEXT_LINE_H
-# define	BUFF_SIZE 4096 
+# define	BUFF_SIZE 4
 
 # include <sys/types.h>
 # include <sys/uio.h>
