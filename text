@@ -1,0 +1,3 @@
+To compile with main.c, first make libft and run:
+
+gcc -Ilibft/ -c main.c get_next_line.c && gcc *.o -Ilibft/ -Llibft/ -lft

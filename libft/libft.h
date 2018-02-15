@@ -107,7 +107,6 @@ char				*ft_convert_base(const char *nbr, const char *base_from,
 		const char *base_to);
 size_t				ft_sqrt_fl(size_t nb);
 size_t				ft_sqrt_cl(size_t nb);
-int					get_next_line(const int fd, char **line);
 double				ft_atod(const char *s);
 void				ft_free_array(void **to_free);
 double				ft_3_dot_product(t_3v *v1, t_3v *v2);
@@ -124,6 +123,6 @@ t_3v				*ft_zero_3v_p(void);
 t_3v				ft_init_3v(double a, double b, double c);
 t_3v				*ft_init_3v_p(double a, double b, double c);
 char				*ft_brace_content(char *input, char o, char c);
-void				ft_realloc(void *s, size_t old_size, size_t new_size);
+void				ft_realloc(void **s, size_t old_size, size_t new_size);
 
 #endif

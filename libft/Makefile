@@ -83,7 +83,6 @@ SRC = ft_atoi.c\
 	  ft_convert_base.c\
 	  ft_sqrt_fl.c\
 	  ft_sqrt_cl.c\
-	  get_next_line.c\
 	  ft_atod.c\
 	  ft_free_array.c\
 	  ft_3_dot_product.c\
