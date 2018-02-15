@@ -1,23 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memset.c                                        :+:      :+:    :+:   */
+/*   ft_putchar.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mpauw <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/11/06 18:06:31 by mpauw             #+#    #+#             */
-/*   Updated: 2017/11/09 14:29:07 by mpauw            ###   ########.fr       */
+/*   Created: 2017/11/08 09:07:42 by mpauw             #+#    #+#             */
+/*   Updated: 2017/11/08 14:25:04 by mpauw            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memset(void *b, int c, size_t len)
+void	ft_putchar(char c)
 {
-	void	*to_return;
-
-	to_return = b;
-	while (len-- > 0)
-		*(char *)(b++) = c;
-	return (to_return);
+	write(1, &c, 1);
 }

@@ -1,23 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memset.c                                        :+:      :+:    :+:   */
+/*   ft_3v_scalar.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mpauw <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/11/06 18:06:31 by mpauw             #+#    #+#             */
-/*   Updated: 2017/11/09 14:29:07 by mpauw            ###   ########.fr       */
+/*   Created: 2018/01/23 11:23:52 by mpauw             #+#    #+#             */
+/*   Updated: 2018/01/23 11:25:22 by mpauw            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memset(void *b, int c, size_t len)
+void	ft_3v_scalar(t_3v *v, double s)
 {
-	void	*to_return;
+	int	i;
 
-	to_return = b;
-	while (len-- > 0)
-		*(char *)(b++) = c;
-	return (to_return);
+	if (!v)
+		return ;
+	i = 0;
+	while (i < 3)
+	{
+		(v->v)[i] = (v->v)[i] * s;
+		i++;
+	}
 }

@@ -1,23 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memset.c                                        :+:      :+:    :+:   */
+/*   ft_3_dot_product.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mpauw <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/11/06 18:06:31 by mpauw             #+#    #+#             */
-/*   Updated: 2017/11/09 14:29:07 by mpauw            ###   ########.fr       */
+/*   Created: 2018/01/23 10:24:19 by mpauw             #+#    #+#             */
+/*   Updated: 2018/01/23 10:31:39 by mpauw            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memset(void *b, int c, size_t len)
+double	ft_3_dot_product(t_3v *v1, t_3v *v2)
 {
-	void	*to_return;
+	double	dot_product;
+	int		i;
 
-	to_return = b;
-	while (len-- > 0)
-		*(char *)(b++) = c;
-	return (to_return);
+	if (!v1 || !v2)
+		return (0);
+	dot_product = 0;
+	i = 0;
+	while (i < 3)
+	{
+		dot_product += (v1->v)[i] * (v2->v)[i];
+		i++;
+	}
+	return (dot_product);
 }

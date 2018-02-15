@@ -1,23 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memset.c                                        :+:      :+:    :+:   */
+/*   ft_free_array.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mpauw <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/11/06 18:06:31 by mpauw             #+#    #+#             */
-/*   Updated: 2017/11/09 14:29:07 by mpauw            ###   ########.fr       */
+/*   Created: 2018/01/04 16:55:11 by mpauw             #+#    #+#             */
+/*   Updated: 2018/01/04 17:01:11 by mpauw            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memset(void *b, int c, size_t len)
+void	ft_free_array(void **to_free)
 {
-	void	*to_return;
+	int	i;
 
-	to_return = b;
-	while (len-- > 0)
-		*(char *)(b++) = c;
-	return (to_return);
+	i = 0;
+	while (*(to_free + i))
+		free(*(to_free + i++));
+	free(to_free);
 }

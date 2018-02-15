@@ -6,16 +6,18 @@
 /*   By: mpauw <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/06 18:04:39 by mpauw             #+#    #+#             */
-/*   Updated: 2017/11/13 11:00:49 by mpauw            ###   ########.fr       */
+/*   Updated: 2018/01/29 17:21:04 by mpauw            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
+# define RAD 0.0174532925
 
 # include <stdlib.h>
 # include <unistd.h>
 # include <string.h>
+# include <math.h>
 
 typedef struct		s_list
 {
@@ -24,11 +26,16 @@ typedef struct		s_list
 	struct s_list	*next;
 }					t_list;
 
+typedef struct		s_3v
+{
+	double			v[3];
+}					t_3v;
+
 void				*ft_memcpy(void *dst, const void *src, size_t n);
 size_t				ft_strlen(const char *s);
 int					ft_strcmp(const char *s1, const char *s2);
 int					ft_strncmp(const char *s1, const char *s2, size_t n);
-void				ft_putchar(char c);
+void				ft_putchar(unsigned int c);
 void				ft_putstr(char const *s);
 char				*ft_itoa(int n);
 void				ft_putchar_fd(char c, int fd);
@@ -98,5 +105,26 @@ int					*ft_factorization(int nb);
 int					ft_isprime(int n);
 char				*ft_convert_base(const char *nbr, const char *base_from,
 		const char *base_to);
+size_t				ft_sqrt_fl(size_t nb);
+size_t				ft_sqrt_cl(size_t nb);
+//int					get_next_line(const int fd, char **line);
+double				ft_atod(const char *s);
+void				ft_free_array(void **to_free);
+double				ft_3_dot_product(t_3v *v1, t_3v *v2);
+double				ft_get_3v_size(t_3v v);
+t_3v				*ft_3v_add(t_3v *v1, t_3v *v2);
+t_3v				*ft_3v_subtract(t_3v *v1, t_3v *v2);
+t_3v				*ft_get_3_unit(int dir);
+void				ft_make_3_unit(t_3v *v);
+t_3v				*ft_cross_product(t_3v v1, t_3v v2);
+void				ft_3v_scalar(t_3v *v, double s);
+void				ft_rotate_v(t_3v *v, int axis, double angle, int rad);
+t_3v				ft_zero_3v(void);
+t_3v				*ft_zero_3v_p(void);
+t_3v				ft_init_3v(double a, double b, double c);
+t_3v				*ft_init_3v_p(double a, double b, double c);
+char				*ft_brace_content(char *input, char o, char c);
+void				ft_realloc(void **s, size_t old_size, size_t new_size);
+//void				ft_realloc(char *str, size_t *prev_mem);
 
 #endif

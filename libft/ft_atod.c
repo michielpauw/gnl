@@ -1,23 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memset.c                                        :+:      :+:    :+:   */
+/*   ft_atod.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mpauw <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/11/06 18:06:31 by mpauw             #+#    #+#             */
-/*   Updated: 2017/11/09 14:29:07 by mpauw            ###   ########.fr       */
+/*   Created: 2018/01/03 09:52:49 by mpauw             #+#    #+#             */
+/*   Updated: 2018/01/03 10:37:28 by mpauw            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memset(void *b, int c, size_t len)
-{
-	void	*to_return;
+#include <stdio.h>
 
-	to_return = b;
-	while (len-- > 0)
-		*(char *)(b++) = c;
+double	ft_atod(const char *s)
+{
+	int		before_dot;
+	int		after_dot;
+	double	to_return;
+
+	before_dot = ft_atoi(s);
+	while (!ft_isdigit((int)(*s)))
+		s++;
+	while (ft_isdigit((int)(*s)))
+		s++;
+	if (*s != '.')
+	{
+		return ((double)before_dot);
+	}
+	s++;
+	after_dot = ft_atoi(s);
+	to_return = (double)before_dot + ((double)after_dot /
+			(double)ft_power(10, ft_numlen(after_dot)));
 	return (to_return);
 }

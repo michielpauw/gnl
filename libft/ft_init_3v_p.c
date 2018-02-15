@@ -1,23 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memset.c                                        :+:      :+:    :+:   */
+/*   ft_init_3v_p.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mpauw <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/11/06 18:06:31 by mpauw             #+#    #+#             */
-/*   Updated: 2017/11/09 14:29:07 by mpauw            ###   ########.fr       */
+/*   Created: 2018/01/23 18:04:50 by mpauw             #+#    #+#             */
+/*   Updated: 2018/01/30 17:31:21 by mpauw            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memset(void *b, int c, size_t len)
+t_3v	*ft_init_3v_p(double a, double b, double c)
 {
-	void	*to_return;
+	t_3v	*v;
 
-	to_return = b;
-	while (len-- > 0)
-		*(char *)(b++) = c;
-	return (to_return);
+	if (!(v = (t_3v *)malloc(sizeof(t_3v))))
+		return (NULL);
+	(v->v)[0] = a;
+	(v->v)[1] = b;
+	(v->v)[2] = c;
+	return (v);
 }
