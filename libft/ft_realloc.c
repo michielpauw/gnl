@@ -16,23 +16,3 @@ void	ft_realloc(void **s, size_t old_size, size_t new_size)
 	}
 	free(m);
 }
-
-/*
-void	ft_realloc(char *str, size_t *prev_mem)
-{
-	char	*temp;
-	size_t	i;
-
-	i = 0;
-	temp = str;
-	if (!(str = (char *)malloc(sizeof(char) * (*prev_mem * 2 + 1))))
-		return ;
-	while (*(temp + i))
-	{
-		*(str + i) = *(temp + i);
-		i++;
-	}
-	*prev_mem *= 2;
-	free(temp);
-}
-*/
